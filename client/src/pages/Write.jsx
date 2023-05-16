@@ -32,14 +32,14 @@ const Write = () => {
     try {
       state
         ? await axios.put(`/posts/${state.id}`, {
-            title,
-            description: value,
+            title: value,
+            description: title,
             cat,
             img: file ? imgUrl : "",
           })
         : await axios.post(`/posts/`, {
-            title,
-            description: value,
+            title: value,
+            description: title,
             cat,
             img: file ? imgUrl : "",
             date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
@@ -56,15 +56,17 @@ const Write = () => {
         <input
           type="text"
           placeholder="Title"
-          onChange={(e) => setTitle(e.target.value)}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
         />
         <div className="editorContainer">
           <ReactQuill
             className="editor"
             theme="snow"
-            value={value}
-            onChange={setValue}
+            value={title}
+            onChange={setTitle}
           />
+          
         </div>
       </div>
       <div className="menu">
