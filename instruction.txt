@@ -1,0 +1,7 @@
+Instruction for setting up and running the application locally.
+
+	1. Clone the blogging platform project into your local machine.
+	2. Import the database in database backup folder of the project.
+	3. run command for install npm and start npm in 'client' folder. (for frontend)
+	4. run command for install npm and start npm in 'api' folder. (for backend)
+	5. Now you can run project manually.
